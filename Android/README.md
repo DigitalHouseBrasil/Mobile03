@@ -1,4 +1,4 @@
-# Mobile03-Java
+# Mobile03-Android
 
 ## Entendendo e aplicando conceitos do JAVA 
 
@@ -8,5 +8,3 @@
 #### Download GIT: https://git-scm.com/download/
 #### Download GITKRAKEN: https://www.gitkraken.com/download
 #### Download ANDROID STUDIO/SDK: https://developer.android.com/studio/
-
-

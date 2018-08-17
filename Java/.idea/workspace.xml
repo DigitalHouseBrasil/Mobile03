@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc9f3483-0f3b-4cdb-b857-a3a75323da8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/aula8/Arquivo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula8/Documento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula8/Exercicio1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula8/Foto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula8/Impressora.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula8/ImpressoraDoTairo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/aula9/Exercicio1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/aula6/Execercicio1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aula6/Execercicio1.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,15 +53,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Arquivo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula8/Arquivo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Impressora.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula8/Impressora.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -135,11 +119,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Exercicio1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Exercicio1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula8/Exercicio1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="102">
+              <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exercicio1.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/aula9/Exercicio1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="617" column="17" selection-start-line="617" selection-start-column="17" selection-end-line="617" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/HashMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-778">
+              <caret line="474" column="11" selection-start-line="474" selection-start-column="11" selection-end-line="474" selection-end-column="11" />
+              <folding>
+                <element signature="e#19327#19328#0" expanded="true" />
+                <element signature="e#19410#19411#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,6 +207,7 @@
         <option value="$PROJECT_DIR$/src/aula8/ImpressoraDoTairo.java" />
         <option value="$PROJECT_DIR$/src/aula8/Exercicio1.java" />
         <option value="$PROJECT_DIR$/src/aula8/Impressora.java" />
+        <option value="$PROJECT_DIR$/src/aula9/Exercicio1.java" />
       </list>
     </option>
   </component>
@@ -208,10 +224,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1455" />
-    <option name="y" value="33" />
-    <option name="width" value="1216" />
-    <option name="height" value="712" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -235,12 +251,6 @@
               <item name="Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aula8" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -275,7 +285,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Exercicio1">
+  <component name="RunManager" selected="Application.Exercicio1 (1)">
+    <configuration name="Exercicio1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aula9.Exercicio1" />
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aula9.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Exercicio1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aula8.Exercicio1" />
       <module name="Java" />
@@ -299,9 +319,11 @@
     <list>
       <item itemvalue="Application.Principal" />
       <item itemvalue="Application.Exercicio1" />
+      <item itemvalue="Application.Exercicio1 (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Exercicio1 (1)" />
         <item itemvalue="Application.Exercicio1" />
         <item itemvalue="Application.Principal" />
       </list>
@@ -318,12 +340,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533825401643</updated>
       <workItem from="1533825405042" duration="2414000" />
-      <workItem from="1534284021298" duration="5599000" />
+      <workItem from="1534284021298" duration="12262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10374000" />
+    <option name="totallyTimeSpent" value="17037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -339,8 +361,8 @@
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3283582" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3283582" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3946932" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32755905" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="4" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
@@ -549,8 +571,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aula8/Exercicio1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-778">
+          <caret line="474" column="11" selection-start-line="474" selection-start-column="11" selection-end-line="474" selection-end-column="11" />
+          <folding>
+            <element signature="e#19327#19328#0" expanded="true" />
+            <element signature="e#19410#19411#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="617" column="17" selection-start-line="617" selection-start-column="17" selection-end-line="617" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aula9/Exercicio1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
         </state>
       </provider>
     </entry>

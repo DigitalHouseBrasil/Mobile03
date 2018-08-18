@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc9f3483-0f3b-4cdb-b857-a3a75323da8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/aula9/Exercicio1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/aula10/Exercicio1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java/aula9/Exercicio1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java/aula9/Exercicio1.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,36 +90,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Documento.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula8/Documento.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-              <folding>
-                <element signature="e#110#111#0" expanded="true" />
-                <element signature="e#140#141#0" expanded="true" />
-                <element signature="e#186#187#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#282#283#0" expanded="true" />
-                <element signature="e#322#323#0" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#549#550#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImpressoraDoTairo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula8/ImpressoraDoTairo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Exercicio1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula8/Exercicio1.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -128,11 +99,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Exercicio1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Exercicio1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aula9/Exercicio1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+            <state relative-caret-position="663">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exercicio1.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/aula10/Exercicio1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrintStream.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/io/PrintStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="733" column="16" selection-start-line="733" selection-start-column="16" selection-end-line="733" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Scanner.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/Scanner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="1416" column="18" selection-start-line="1416" selection-start-column="18" selection-end-line="1416" selection-end-column="18" />
+              <folding>
+                <element signature="e#52228#52229#0" expanded="true" />
+                <element signature="e#52286#52287#0" expanded="true" />
+                <element signature="e#78006#78007#0" expanded="true" />
+                <element signature="e#78050#78051#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,27 +158,6 @@
               <folding>
                 <element signature="e#19327#19328#0" expanded="true" />
                 <element signature="e#19410#19411#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Foto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aula8/Foto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-              <folding>
-                <element signature="e#233#234#0" expanded="true" />
-                <element signature="e#263#264#0" expanded="true" />
-                <element signature="e#309#310#0" expanded="true" />
-                <element signature="e#347#348#0" expanded="true" />
-                <element signature="e#378#379#0" expanded="true" />
-                <element signature="e#405#406#0" expanded="true" />
-                <element signature="e#445#446#0" expanded="true" />
-                <element signature="e#477#478#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#556#557#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -208,6 +191,7 @@
         <option value="$PROJECT_DIR$/src/aula8/Exercicio1.java" />
         <option value="$PROJECT_DIR$/src/aula8/Impressora.java" />
         <option value="$PROJECT_DIR$/src/aula9/Exercicio1.java" />
+        <option value="$PROJECT_DIR$/src/aula10/Exercicio1.java" />
       </list>
     </option>
   </component>
@@ -252,6 +236,12 @@
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aula10" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -285,13 +275,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Exercicio1 (1)">
+  <component name="RunManager" selected="Application.Exercicio1 (2)">
     <configuration name="Exercicio1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aula9.Exercicio1" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="aula9.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Exercicio1 (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aula10.Exercicio1" />
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aula10.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -320,9 +320,11 @@
       <item itemvalue="Application.Principal" />
       <item itemvalue="Application.Exercicio1" />
       <item itemvalue="Application.Exercicio1 (1)" />
+      <item itemvalue="Application.Exercicio1 (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Exercicio1 (2)" />
         <item itemvalue="Application.Exercicio1 (1)" />
         <item itemvalue="Application.Exercicio1" />
         <item itemvalue="Application.Principal" />
@@ -340,12 +342,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533825401643</updated>
       <workItem from="1533825405042" duration="2414000" />
-      <workItem from="1534284021298" duration="12262000" />
+      <workItem from="1534284021298" duration="16027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17037000" />
+    <option name="totallyTimeSpent" value="20802000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -361,8 +363,8 @@
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3946932" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32755905" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.46932006" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32669982" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="4" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
@@ -596,8 +598,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aula9/Exercicio1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+        <state relative-caret-position="663">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="1416" column="18" selection-start-line="1416" selection-start-column="18" selection-end-line="1416" selection-end-column="18" />
+          <folding>
+            <element signature="e#52228#52229#0" expanded="true" />
+            <element signature="e#52286#52287#0" expanded="true" />
+            <element signature="e#78006#78007#0" expanded="true" />
+            <element signature="e#78050#78051#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/io/PrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="733" column="16" selection-start-line="733" selection-start-column="16" selection-end-line="733" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aula10/Exercicio1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
         </state>
       </provider>
     </entry>

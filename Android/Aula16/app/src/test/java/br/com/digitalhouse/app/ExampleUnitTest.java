@@ -1,4 +1,4 @@
-package br.com.digitalhouse.aula16;
+package br.com.digitalhouse.app;
 
 import org.junit.Test;
 

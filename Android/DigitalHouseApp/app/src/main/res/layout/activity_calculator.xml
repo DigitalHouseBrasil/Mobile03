@@ -20,10 +20,10 @@
             android:gravity="end|center"
             android:paddingEnd="16dp"
             android:paddingRight="16dp"
+            android:singleLine="true"
             android:text="0"
             android:textColor="@color/secondary_text"
-            android:textSize="36sp"
-            android:singleLine="true" />
+            android:textSize="36sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -71,12 +71,12 @@
             android:textSize="28sp" />
 
         <TextView
+            android:id="@+id/btnDivide"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/btn_calculator"
             android:gravity="center"
-            android:onClick="calculate"
             android:text="÷"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
@@ -127,12 +127,12 @@
             android:textSize="28sp" />
 
         <TextView
+            android:id="@+id/btnMutitly"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/btn_calculator"
             android:gravity="center"
-            android:onClick="calculate"
             android:text="x"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
@@ -183,12 +183,12 @@
             android:textSize="28sp" />
 
         <TextView
+            android:id="@+id/btnMinus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/btn_calculator"
             android:gravity="center"
-            android:onClick="calculate"
             android:text="-"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
@@ -239,12 +239,12 @@
             android:textSize="28sp" />
 
         <TextView
+            android:id="@+id/btnPlus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/btn_calculator"
             android:gravity="center"
-            android:onClick="calculate"
             android:text="+"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
@@ -264,8 +264,10 @@
             android:layout_marginRight="1dp"
             android:layout_weight="2"
             android:background="@color/divider"
-            android:gravity="center"
+            android:gravity="center|left"
             android:onClick="calculate"
+            android:paddingLeft="16dp"
+            android:paddingStart="16dp"
             android:text="0"
             android:textSize="28sp" />
 
@@ -282,12 +284,12 @@
             android:textSize="28sp" />
 
         <TextView
+            android:id="@+id/btnEquals"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/btn_calculator"
             android:gravity="center"
-            android:onClick="calculate"
             android:text="="
             android:textColor="@android:color/white"
             android:textSize="28sp" />

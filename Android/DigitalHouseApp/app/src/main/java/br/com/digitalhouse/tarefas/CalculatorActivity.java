@@ -7,9 +7,14 @@ import android.widget.TextView;
 
 import br.com.digitalhouse.app.R;
 
-public class CalculatorActivity extends AppCompatActivity {
+public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textViewResult;
+    private TextView textViewDivide;
+    private TextView textViewMultiply;
+    private TextView textViewMinus;
+    private TextView textViewPlus;
+    private TextView textViewEquals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +22,18 @@ public class CalculatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calculator);
 
         textViewResult = findViewById(R.id.textview_result);
+        textViewDivide = findViewById(R.id.btnDivide);
+        textViewMultiply = findViewById(R.id.btnMutitly);
+        textViewMinus = findViewById(R.id.btnMinus);
+        textViewPlus = findViewById(R.id.btnPlus);
+        textViewEquals = findViewById(R.id.btnEquals);
+
+
+        textViewDivide.setOnClickListener(this);
+        textViewMultiply.setOnClickListener(this);
+        textViewMinus.setOnClickListener(this);
+        textViewPlus.setOnClickListener(this);
+        textViewEquals.setOnClickListener(this);
     }
 
     public void calculate(View view) {
@@ -40,5 +57,10 @@ public class CalculatorActivity extends AppCompatActivity {
         }
 
         textViewResult.setText(result);
+    }
+
+    @Override
+    public void onClick(View v) {
+        calculate(v);
     }
 }

@@ -1,8 +1,8 @@
 package br.com.digitalhouse.app;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -15,8 +15,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        imageViewSplash = (ImageView) findViewById(R.id.imageview_splash);
+        imageViewSplash = findViewById(R.id.imageview_splash);
 
+        // Direciona para a tela de Login
         imageViewSplash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

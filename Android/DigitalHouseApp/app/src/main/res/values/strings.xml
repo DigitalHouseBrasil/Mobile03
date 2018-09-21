@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">Aula 16</string>
+    <string name="app_name">DigitalHouse Mob3</string>
+
+    <!-- Posts -->
+    <string name="welcome_to_posts">Welcome to posts</string>
+
+    <!-- Comments -->
+    <string name="comments">Comments</string>
+
+    <!-- Test -->
+    <string name="call_posts">Call Posts</string>
+    <string name="call_commets">Call Comments</string>
+
+    <!-- Home -->
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>

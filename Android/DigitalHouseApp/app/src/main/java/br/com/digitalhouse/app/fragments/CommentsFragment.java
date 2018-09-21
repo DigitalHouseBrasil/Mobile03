@@ -14,7 +14,6 @@ import br.com.digitalhouse.app.R;
  */
 public class CommentsFragment extends Fragment {
 
-
     public CommentsFragment() {
         // Required empty public constructor
     }
@@ -26,5 +25,4 @@ public class CommentsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_comments, container, false);
     }
-
 }

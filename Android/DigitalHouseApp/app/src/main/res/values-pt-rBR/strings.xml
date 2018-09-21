@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">DigitalHouse Mob3</string>
+
+    <!-- Posts -->
     <string name="welcome_to_posts">Bem-vindo aos posts</string>
+
+    <!-- Comments -->
     <string name="comments">Comentários</string>
+
+    <!-- Test -->
     <string name="call_posts">Chamar Posts</string>
     <string name="call_commets">Chamar Comentários</string>
+
+    <!-- Home -->
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Fechar</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configurações</string>
+
 </resources>

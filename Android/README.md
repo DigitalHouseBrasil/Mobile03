@@ -1,6 +1,6 @@
 # Mobile03-Android
 
-## Entendendo e aplicando conceitos do ANDOID 
+## Entendendo e aplicando conceitos do ANDROID 
 
 ### Links 
 #### Download Java JDK: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html

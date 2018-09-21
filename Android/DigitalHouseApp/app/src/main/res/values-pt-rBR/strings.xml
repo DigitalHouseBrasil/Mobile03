@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_to_posts">Bem-vindo aos posts</string>
+    <string name="comments">Comentários</string>
+    <string name="call_posts">Chamar Posts</string>
+    <string name="call_commets">Chamar Comentários</string>
+</resources>

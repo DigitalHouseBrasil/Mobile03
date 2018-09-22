@@ -8,9 +8,16 @@
             android:id="@+id/nav_posts"
             android:icon="@drawable/ic_menu_camera"
             android:title="Posts" />
+
         <item
             android:id="@+id/nav_commets"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Comments" />
+
+        <item
+            android:id="@+id/nav_people"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="People" />
+        
     </group>
 </menu>

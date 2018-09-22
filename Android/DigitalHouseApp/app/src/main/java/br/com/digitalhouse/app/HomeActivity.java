@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import br.com.digitalhouse.app.fragments.CommentsFragment;
+import br.com.digitalhouse.app.fragments.PeopleFragment;
 import br.com.digitalhouse.app.fragments.PostsFragment;
 
 public class HomeActivity extends AppCompatActivity
@@ -81,6 +82,10 @@ public class HomeActivity extends AppCompatActivity
             // Se clicou no COMMENTS adicionamos o fragment de Comments
         } else if (id == R.id.nav_commets) {
             replaceFragment(new CommentsFragment());
+
+            // Se clicou no PEOPLE adicionamos o fragment de PeopleFragment
+        } else if (id == R.id.nav_people) {
+            replaceFragment(new PeopleFragment());
         }
 
         drawer.closeDrawer(GravityCompat.START);

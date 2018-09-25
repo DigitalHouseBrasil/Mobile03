@@ -20,5 +20,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Configurações</string>
+    <string name="send_message_to_another_fragment">Enviar mensagem para outro Fragment</string>
 
 </resources>

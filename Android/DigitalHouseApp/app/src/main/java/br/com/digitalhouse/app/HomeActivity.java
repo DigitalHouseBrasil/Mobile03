@@ -15,9 +15,10 @@ import android.view.MenuItem;
 import br.com.digitalhouse.app.fragments.CommentsFragment;
 import br.com.digitalhouse.app.fragments.PeopleFragment;
 import br.com.digitalhouse.app.fragments.PostsFragment;
+import br.com.digitalhouse.app.interfaces.ClickFragment;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,ClickFragment {
 
     private DrawerLayout drawer;
     private Toolbar toolbar;
@@ -96,8 +97,15 @@ public class HomeActivity extends AppCompatActivity
     // Adiciona um fragment no lugar do container
     public void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.container, fragment);
+        transaction.replace(R.id.container, fragment);
         transaction.addToBackStack("Frag");
         transaction.commit();
+    }
+
+    @Override
+    public void onClickButton(String message) {
+        Fragment fragment = CommentsFragment.newInstance(message);
+
+        replaceFragment(fragment);
     }
 }

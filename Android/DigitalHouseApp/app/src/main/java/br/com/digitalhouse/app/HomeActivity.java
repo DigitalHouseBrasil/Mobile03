@@ -36,6 +36,9 @@ public class HomeActivity extends AppCompatActivity
 
         // Configura o drawer layout na toolbar
         configDrawerLayout(toolbar);
+
+        // Primeira tela, Pessoas
+        replaceFragment(new PeopleFragment());
     }
 
     private void initViews() {

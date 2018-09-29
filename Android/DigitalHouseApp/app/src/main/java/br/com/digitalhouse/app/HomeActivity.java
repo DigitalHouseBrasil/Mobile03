@@ -106,7 +106,9 @@ public class HomeActivity extends AppCompatActivity
     }
 
     @Override
+    //recebe a mensagem que o post mandou
     public void onClickButton(String message) {
+        //Pega uma instancia do Comments Fragments
         Fragment fragment = CommentsFragment.newInstance(message);
 
         replaceFragment(fragment);

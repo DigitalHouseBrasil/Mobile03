@@ -8,8 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import br.com.digitalhouse.app.R;
 import br.com.digitalhouse.app.adapters.RecyclerViewPersonAdapter;
+import br.com.digitalhouse.app.interfaces.RecyclerViewOnCickListener;
 import br.com.digitalhouse.app.model.Person;
 
 import java.util.ArrayList;
@@ -18,7 +20,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PeopleFragment extends Fragment {
+public class PeopleFragment extends Fragment implements RecyclerViewOnCickListener{
 
     private List<Person> list = new ArrayList<>();
 
@@ -33,7 +35,8 @@ public class PeopleFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_people, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        RecyclerViewPersonAdapter adapter = new RecyclerViewPersonAdapter(getListPerson());
+        //o adapter é quem renderiza os itens
+        RecyclerViewPersonAdapter adapter = new RecyclerViewPersonAdapter(getListPerson(),this);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -64,5 +67,11 @@ public class PeopleFragment extends Fragment {
         list.add(new Person("Aluno nome", "Aluno"));
 
         return list;
+    }
+
+    @Override
+    public void onItemClick(Person person) {
+        //Toast cria um popup
+        Toast.makeText(getContext(), "Nome: " + person.getName(), Toast.LENGTH_LONG).show();
     }
 }

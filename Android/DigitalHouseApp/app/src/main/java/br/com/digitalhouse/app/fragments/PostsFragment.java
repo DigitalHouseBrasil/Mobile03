@@ -25,6 +25,7 @@ public class PostsFragment extends Fragment {
 
 
     @Override
+    //onAttach vincula a interface com o fragmento
     public void onAttach(Context context) {
         super.onAttach(context);
 

@@ -18,15 +18,6 @@ import br.com.digitalhouse.app.interfaces.ClickFragment;
 public class PostsFragment extends Fragment {
 
     private ClickFragment listener;
-    // Imagine que a Activity seja uma empresa
-    // onde cada Fragment é um funcionário, situado em andares diferentes
-    // do prédio. Para que os funcionários falem um com o outro,
-    // a empresa (Activity) implementou uma linha telefônica, que é a equivalente à nossa Interface.
-    // Todos os funcionários precisam usar a linha para poder falar um com o outro.
-    // A linha não serve para nada sem um telefone para efetivamente
-    // permitir a transferência da mensagem. Nessa situação,
-    // o objeto listener é o telefone que permitirá que a mensagem
-    // se transmitida de um funcionário para outro.
 
     public PostsFragment() {
         // Required empty public constructor

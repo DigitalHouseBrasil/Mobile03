@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import br.com.digitalhouse.app.R;
+import br.com.digitalhouse.app.interfaces.RecyclerViewClickListener;
 import br.com.digitalhouse.app.model.Person;
 
 import java.util.List;
@@ -16,9 +17,11 @@ import java.util.List;
 public class RecyclerViewPersonAdapter extends RecyclerView.Adapter<RecyclerViewPersonAdapter.ViewHolder> {
 
     private List<Person> personList;
+    private RecyclerViewClickListener listener;
 
-    public RecyclerViewPersonAdapter(List<Person> personList) {
+    public RecyclerViewPersonAdapter(List<Person> personList, RecyclerViewClickListener listener) {
         this.personList = personList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -31,18 +34,28 @@ public class RecyclerViewPersonAdapter extends RecyclerView.Adapter<RecyclerView
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // Pego a pessoa na posição enviada
-        Person person = personList.get(position);
+        final Person person = personList.get(position);
 
         //Preenche os dados da pessoa nas views
         holder.bind(person);
 
         //Seta a animação para cada item
         setAnimation(holder.itemView);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //vinculamos o click no item
+                listener.onItemClick(person);
+            }
+        });
+
+
     }
 
     // Set a animação em uma view
     private void setAnimation(View view) {
-        Animation animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.bounce);
+        Animation animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.slide_in_left);
         animation.setDuration(1000);
         view.startAnimation(animation);
     }

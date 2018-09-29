@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView imageViewSplash;
@@ -20,10 +23,22 @@ public class SplashActivity extends AppCompatActivity {
         // Direciona para a tela de Login
         imageViewSplash.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+            public void onClick(View v) {  // assim que clica, da o jump para login;
+                jump();
             }
         });
+
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                jump();
+            }
+        }, 3000); // se não clicar, a tela de splash dura 3s;
+    }
+
+    private void jump() {
+        startActivity(new Intent(SplashActivity.this, LoginActivity.class)); // está na tela de login e tenta voltar para a splash, o programa fecha;
+        finish();
     }
 
     @Override

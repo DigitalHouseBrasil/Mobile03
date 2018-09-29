@@ -108,7 +108,6 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public void onClickButton(String message) {
         Fragment fragment = CommentsFragment.newInstance(message);
-
         replaceFragment(fragment);
     }
 }

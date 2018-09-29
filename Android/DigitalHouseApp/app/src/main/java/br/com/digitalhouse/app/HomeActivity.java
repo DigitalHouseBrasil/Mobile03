@@ -105,10 +105,13 @@ public class HomeActivity extends AppCompatActivity
         transaction.commit();
     }
 
+    // Implementação do listener de click do fragment
     @Override
     public void onClickButton(String message) {
+        //Pega uma instancia do comments fragment
         Fragment fragment = CommentsFragment.newInstance(message);
 
+        //Mostra o fragment na tela
         replaceFragment(fragment);
     }
 }

@@ -21,13 +21,20 @@ public class CommentsFragment extends Fragment {
         // Required empty public constructor
     }
 
+    //Retorna uma instancia do fragment
     public static Fragment newInstance(String value) {
+
+        // Cria a instancia do fragmento
         CommentsFragment fragment = new CommentsFragment();
 
+        // Preeenche o bundle
         Bundle bundle = new Bundle();
         bundle.putString("VALUE", value);
 
+        //Seta os argumento
         fragment.setArguments(bundle);
+
+        // devolve o fragmet
         return fragment;
     }
 

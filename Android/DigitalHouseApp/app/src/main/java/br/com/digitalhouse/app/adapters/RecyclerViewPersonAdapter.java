@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
 import br.com.digitalhouse.app.R;
+import br.com.digitalhouse.app.interfaces.RecycleViewOnItemClickListener;
 import br.com.digitalhouse.app.model.Person;
 
 import java.util.List;
@@ -16,9 +18,11 @@ import java.util.List;
 public class RecyclerViewPersonAdapter extends RecyclerView.Adapter<RecyclerViewPersonAdapter.ViewHolder> {
 
     private List<Person> personList;
+    private RecycleViewOnItemClickListener listener;
 
-    public RecyclerViewPersonAdapter(List<Person> personList) {
+    public RecyclerViewPersonAdapter(List<Person> personList, RecycleViewOnItemClickListener listener) {
         this.personList = personList;
+        this.listener = listener;
     }
 
 
@@ -31,10 +35,18 @@ public class RecyclerViewPersonAdapter extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Person person = personList.get(position);
+        final Person person = personList.get(position);
         holder.bind(person);
         setAnimation(holder.itemView);
-        }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(person);
+            }
+        });
+
+    }
 
     private void setAnimation(View view) {
         Animation animation = AnimationUtils.loadAnimation(view.getContext(), android.R.anim.slide_in_left);

@@ -18,12 +18,13 @@ import java.util.List;
 import br.com.digitalhouse.app.R;
 import br.com.digitalhouse.app.adapters.PeopleListAdapter;
 import br.com.digitalhouse.app.adapters.RecyclerViewPersonAdapter;
+import br.com.digitalhouse.app.interfaces.RecycleViewOnItemClickListener;
 import br.com.digitalhouse.app.model.Person;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PeopleFragment extends Fragment {
+public class PeopleFragment extends Fragment implements RecycleViewOnItemClickListener {
 
     private List<Person> list = new ArrayList<>();
 
@@ -38,7 +39,7 @@ public class PeopleFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_people, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        RecyclerViewPersonAdapter adapter = new RecyclerViewPersonAdapter(getListPerson());
+        RecyclerViewPersonAdapter adapter = new RecyclerViewPersonAdapter(getListPerson(), this);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -69,4 +70,9 @@ public class PeopleFragment extends Fragment {
         return list;
     }
 
+    @Override
+    public void onItemClick(Person person) {
+        Toast.makeText(getContext(), "Nome:" + person.getName(), Toast.LENGTH_SHORT).show();
+
+    }
 }

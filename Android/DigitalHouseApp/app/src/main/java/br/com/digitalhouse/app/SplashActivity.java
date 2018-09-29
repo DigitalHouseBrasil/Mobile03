@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView imageViewSplash;
@@ -21,9 +24,22 @@ public class SplashActivity extends AppCompatActivity {
         imageViewSplash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                jump();
             }
         });
+
+
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                jump();
+            }
+        }, 3000);
+    }
+
+    private void jump() {
+        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+        finish();
     }
 
     @Override

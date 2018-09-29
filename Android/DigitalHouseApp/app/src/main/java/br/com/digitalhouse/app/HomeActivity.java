@@ -107,8 +107,10 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public void onClickButton(String message) {
-        Fragment fragment = CommentsFragment.newInstance(message);
+        CommentsFragment fragment = new CommentsFragment();
 
+        Bundle bundle = new Bundle();
+        bundle.putString("VALUE", message);
         replaceFragment(fragment);
     }
 }

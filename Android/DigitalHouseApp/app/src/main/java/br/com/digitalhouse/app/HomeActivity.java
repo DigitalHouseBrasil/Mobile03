@@ -17,7 +17,7 @@ import br.com.digitalhouse.app.fragments.PeopleFragment;
 import br.com.digitalhouse.app.fragments.PostsFragment;
 import br.com.digitalhouse.app.interfaces.ClickFragment;
 
-public class HomeActivity extends AppCompatActivity
+public class  HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,ClickFragment {
 
     private DrawerLayout drawer;

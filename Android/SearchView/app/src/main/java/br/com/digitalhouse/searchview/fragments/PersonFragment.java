@@ -28,6 +28,9 @@ import br.com.digitalhouse.searchview.model.Person;
  */
 public class PersonFragment extends Fragment {
 
+    private List<Person> listPerson = new ArrayList<>();
+    private PersonRecyclerViewAdapter adapter;
+
     public PersonFragment() {
         // Required empty public constructor
     }
@@ -44,7 +47,8 @@ public class PersonFragment extends Fragment {
         EditText searchEdit = view.findViewById(R.id.search_edit);
 
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
-        PersonRecyclerViewAdapter adapter = new PersonRecyclerViewAdapter(getPeople());
+
+        adapter = new PersonRecyclerViewAdapter(listPerson);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -54,6 +58,7 @@ public class PersonFragment extends Fragment {
 
         setSearchView(searchView);
         setEditTextListener(searchEdit);
+        setPersonList();
 
         return view;
     }
@@ -73,41 +78,59 @@ public class PersonFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 Log.i("LOG", "Texto digitado ao digitar no EditText: " + s.toString());
+                searchPerson(s.toString());
             }
         });
     }
 
-    private void setSearchView(SearchView searchView) {
+    private void setSearchView(final SearchView searchView) {
         //Implementação do searchVCiew
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
 
                 Log.i("LOG", "Texto digitado do searchView ao submeter: " + query);
+                searchPerson(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
                 Log.i("LOG", "Texto digitado do searchView ao digitar: " + newText);
+                searchPerson(newText);
                 return false;
             }
         });
     }
 
-    private List<Person> getPeople() {
-        List<Person> personList = new ArrayList<>();
-        personList.add(new Person("https://blogthinkbig.com/wp-content/uploads/2017/04/Android.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://www.oficinadanet.com.br/imagens/post/23525/android-torrent_500312.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://blogthinkbig.com/wp-content/uploads/2017/04/Android.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://parentesis.com/imagesPosts/androit%201.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://parentesis.com/imagesPosts/androit%201.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOzekGmWmsitlaHtaCmVX0EInWGnGOCQlJtoGQSATbhU5uJeHnXg", "Tairo", "Professor"));personList.add(new Person("https://blogthinkbig.com/wp-content/uploads/2017/04/Android.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://www.oficinadanet.com.br/imagens/post/23525/android-torrent_500312.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://blogthinkbig.com/wp-content/uploads/2017/04/Android.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://parentesis.com/imagesPosts/androit%201.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://parentesis.com/imagesPosts/androit%201.jpg", "Tairo", "Professor"));
-        personList.add(new Person("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOzekGmWmsitlaHtaCmVX0EInWGnGOCQlJtoGQSATbhU5uJeHnXg", "Tairo", "Professor"));
-        return personList;
+    private void searchPerson(String name) {
+        List<Person> searchList = new ArrayList<>();
+
+        for (Person person : listPerson) {
+            if (person.getName().contains(name)) {
+                searchList.add(person);
+            }
+        }
+
+        if (!searchList.isEmpty()) {
+            adapter.update(searchList);
+        }
+    }
+
+    private void setPersonList() {
+        listPerson.clear();
+        listPerson.add(new Person("https://blogthinkbig.com/wp-content/uploads/2017/04/Android.jpg", "Tairo", "Professor"));
+        listPerson.add(new Person("https://www.oficinadanet.com.br/imagens/post/23525/android-torrent_500312.jpg", "Victor", "Professor"));
+        listPerson.add(new Person("https://blogthinkbig.com/wp-content/uploads/2017/04/Android.jpg", "Leo", "Professor"));
+        listPerson.add(new Person("https://parentesis.com/imagesPosts/androit%201.jpg", "Jessica", "Professor"));
+        listPerson.add(new Person("https://parentesis.com/imagesPosts/androit%201.jpg", "Romario", "Professor"));
+        listPerson.add(new Person("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOzekGmWmsitlaHtaCmVX0EInWGnGOCQlJtoGQSATbhU5uJeHnXg", "Ernanni", "Professor"));
+        listPerson.add(new Person("https://blogthinkbig.com/wp-content/uploads/2017/04/Android.jpg", "Tairo", "Professor"));
+        listPerson.add(new Person("https://www.oficinadanet.com.br/imagens/post/23525/android-torrent_500312.jpg", "Victor", "Professor"));
+        listPerson.add(new Person("https://blogthinkbig.com/wp-content/uploads/2017/04/Android.jpg", "Leo", "Professor"));
+        listPerson.add(new Person("https://parentesis.com/imagesPosts/androit%201.jpg", "Jessica", "Professor"));
+        listPerson.add(new Person("https://parentesis.com/imagesPosts/androit%201.jpg", "Romario", "Professor"));
+        listPerson.add(new Person("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOzekGmWmsitlaHtaCmVX0EInWGnGOCQlJtoGQSATbhU5uJeHnXg", "Ernanni", "Professor"));
+
     }
 }

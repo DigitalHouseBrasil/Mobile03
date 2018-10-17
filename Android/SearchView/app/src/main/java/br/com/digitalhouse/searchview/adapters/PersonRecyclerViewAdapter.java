@@ -65,4 +65,9 @@ public class PersonRecyclerViewAdapter extends RecyclerView.Adapter<PersonRecycl
             textViewProfession.setText(person.getProfession());
         }
     }
+
+    public void update(List<Person> newList){
+        personList = newList;
+        notifyDataSetChanged();
+    }
 }

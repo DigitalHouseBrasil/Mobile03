@@ -21,7 +21,6 @@ import br.com.digitalhouse.sqliteroom.data.adapters.RecyclerViewPersonAdapter;
 import br.com.digitalhouse.sqliteroom.data.database.DatabaseRoom;
 import br.com.digitalhouse.sqliteroom.data.interfaces.RecyclerViewOnItemClickListener;
 import br.com.digitalhouse.sqliteroom.model.Person;
-import io.reactivex.disposables.CompositeDisposable;
 
 public class MainActivity extends AppCompatActivity implements RecyclerViewOnItemClickListener {
 
@@ -33,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewOnIte
     private TextInputLayout textInputLayoutProfession;
     private ImageView imageViewDelete;
     private List<Person> personList = new ArrayList<>();
-    private CompositeDisposable disposable = new CompositeDisposable();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewOnIte
         recyclerView.setAdapter(adapter);
 
         // atualizamos a lista de pessoas do adapter do recyclerView
-        updateAdapterPersonList(adapter);
+        getAlldataFromDataBase(adapter);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,37 +75,29 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewOnIte
                 final String name = textInputLayoutName.getEditText().getText().toString();
                 final String profession = textInputLayoutProfession.getEditText().getText().toString();
 
-                personDAO.getByName(name).observe(MainActivity.this, new Observer<Person>() {
+                new Thread(new Runnable() {
                     @Override
-                    public void onChanged(@Nullable final Person person) {
-                        // Se o id maior que zero, a pessoa existe então deletamos
-                        if (person.getId() > 0) {
+                    public void run() {
+                        Person person = personDAO.getByName(name);
+
+                        // Se o id maior que zero, a pessoa existe então atualizamos
+                        if (person != null) {
 
                             person.setName(name);
                             person.setProfession(profession);
 
+                            personDAO.update(person);
 
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    personDAO.update(person);
-                                    updateAdapterPersonList(adapter);
-                                }
-                            });
-                            Toast.makeText(MainActivity.this, "Pessoa: " + name + " deletado", Toast.LENGTH_SHORT).show();
-
+                            showToastAlert("Pessoa: " + name + " atualizado");
                         } else {
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    personDAO.insert(person);
-                                    updateAdapterPersonList(adapter);
-                                }
-                            });
-                            Toast.makeText(MainActivity.this, "Pessoa: " + name + " não existe na base de dados", Toast.LENGTH_SHORT).show();
+                            person = new Person();
+                            person.setName(name);
+                            person.setProfession(profession);
+                            personDAO.insert(person);
+                            showToastAlert("Pessoa: " + name + " inserido");
                         }
                     }
-                });
+                }).start();
             }
         });
 
@@ -118,32 +108,52 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewOnIte
             public void onClick(View v) {
                 final String name = textInputLayoutName.getEditText().getText().toString();
 
-                personDAO.getByName(name).observe(MainActivity.this, new Observer<Person>() {
+
+                new Thread(new Runnable() {
                     @Override
-                    public void onChanged(@Nullable final Person person) {
-                        if (person.getId() > 0) {
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    personDAO.delete(person);
-                                    updateAdapterPersonList(adapter);
-                                }
-                            });
-                            Toast.makeText(MainActivity.this, "Pessoa: " + name + " deletado", Toast.LENGTH_SHORT).show();
+                    public void run() {
+
+                        final Person person = personDAO.getByName(name);
+
+                        if (person != null) {
+                            personDAO.delete(person);
+                            showToastAlert("Pessoa: " + name + " deletado");
                         } else {
-                            Toast.makeText(MainActivity.this, "Pessoa: " + name + " não existe na base de dados", Toast.LENGTH_SHORT).show();
+                            showToastAlert("Pessoa: " + name + " não existe na base de dados");
                         }
                     }
-                });
+                }).start();
             }
         });
     }
 
-    private void updateAdapterPersonList(final RecyclerViewPersonAdapter adapter) {
-        personDAO.getAll().observe(MainActivity.this, new Observer<List<Person>>() {
+    private void getAlldataFromDataBase(final RecyclerViewPersonAdapter adapter) {
+        new Thread(new Runnable() {
             @Override
-            public void onChanged(@Nullable List<Person> personList) {
-                adapter.update(personList);
+            public void run() {
+
+                personDAO.getAll().observe(MainActivity.this, new Observer<List<Person>>() {
+                    @Override
+                    public void onChanged(@Nullable final List<Person> personList) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                adapter.update(personList);
+                            }
+                        });
+                    }
+                });
+
+            }
+        }).start();
+    }
+
+
+    public void showToastAlert(final String message) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
             }
         });
     }

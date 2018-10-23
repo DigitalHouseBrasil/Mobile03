@@ -28,8 +28,8 @@ public interface PersonDAO {
     LiveData<List<Person>> getAll();
 
     @Query("SELECT * from person WHERE id = :id")
-    LiveData<Person> getByID(long id);
+    Person getByID(long id);
 
     @Query("SELECT * from person WHERE name = :name")
-    LiveData<Person> getByName(String name);
+    Person getByName(String name);
 }

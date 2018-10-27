@@ -1,4 +1,4 @@
-package br.com.digitalhouse.json.adapters;
+package br.com.digitalhouse.json.news.adapters;
 
 
 import android.support.annotation.NonNull;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.digitalhouse.json.R;
-import br.com.digitalhouse.json.model.News;
+import br.com.digitalhouse.json.news.model.News;
 
 public class RecyclerViewNewsAdapter extends RecyclerView.Adapter<RecyclerViewNewsAdapter.ViewHolder> {
 

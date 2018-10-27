@@ -1,4 +1,4 @@
-package br.com.digitalhouse.json.model;
+package br.com.digitalhouse.json.news.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -6,11 +6,11 @@ import java.util.List;
 
 public class NewsResponse {
 
-    @SerializedName("news")
+    @SerializedName("noticias")
     private List<News> newsList;
 
     public NewsResponse() {
-        
+
     }
 
     public NewsResponse(List<News> newsList) {

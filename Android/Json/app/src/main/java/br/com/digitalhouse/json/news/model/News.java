@@ -1,4 +1,4 @@
-package br.com.digitalhouse.json.model;
+package br.com.digitalhouse.json.news.model;
 
 public class News {
     private String title;

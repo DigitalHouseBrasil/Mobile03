@@ -4,6 +4,8 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.util.List;
+
 @Entity(tableName = "person")
 public class Person {
 
@@ -17,13 +19,21 @@ public class Person {
     @ColumnInfo(name = "profession")
     private String profession;
 
+    @ColumnInfo(name = "nicks")
+    private List<String> nickNames;
+
+    @ColumnInfo(name = "comments")
+    private List<Comment> coments;
+
     public Person() {
     }
 
-    public Person(long id, String name, String profession) {
+    public Person(long id, String name, String profession, List<String> nickNames, List<Comment> coments) {
         this.id = id;
         this.name = name;
         this.profession = profession;
+        this.nickNames = nickNames;
+        this.coments = coments;
     }
 
     public long getId() {
@@ -48,5 +58,21 @@ public class Person {
 
     public void setProfession(String profession) {
         this.profession = profession;
+    }
+
+    public List<String> getNickNames() {
+        return nickNames;
+    }
+
+    public void setNickNames(List<String> nickNames) {
+        this.nickNames = nickNames;
+    }
+
+    public List<Comment> getComents() {
+        return coments;
+    }
+
+    public void setComents(List<Comment> coments) {
+        this.coments = coments;
     }
 }

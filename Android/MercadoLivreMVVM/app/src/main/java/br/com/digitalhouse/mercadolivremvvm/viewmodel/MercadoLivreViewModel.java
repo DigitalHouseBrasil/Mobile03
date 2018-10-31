@@ -4,28 +4,28 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import java.util.List;
 
 import br.com.digitalhouse.mercadolivremvvm.data.local.MercadoLivreLocalRepository;
+import br.com.digitalhouse.mercadolivremvvm.data.local.database.DatabaseRoom;
 import br.com.digitalhouse.mercadolivremvvm.data.network.MercadoLivreRemoteRepository;
-import br.com.digitalhouse.mercadolivremvvm.model.MercadoLivreResponse;
+import br.com.digitalhouse.mercadolivremvvm.data.local.Dao.ResultsDao;
 import br.com.digitalhouse.mercadolivremvvm.model.Result;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class NewsViewModel extends AndroidViewModel {
+import static br.com.digitalhouse.mercadolivremvvm.util.AppUtil.isNetworkConnected;
+
+public class MercadoLivreViewModel extends AndroidViewModel {
 
     private MutableLiveData<List<Result>> resultLiveData = new MutableLiveData<>();
     private CompositeDisposable disposable = new CompositeDisposable();
 
-    public NewsViewModel(@NonNull Application application) {
+    public MercadoLivreViewModel(@NonNull Application application) {
         super(application);
     }
 
@@ -33,7 +33,7 @@ public class NewsViewModel extends AndroidViewModel {
         return resultLiveData;
     }
 
-    public void getNews(String item) {
+    public void searchItem(String item) {
         if (isNetworkConnected(getApplication())) {
             getFromNetwork(item);
         } else {
@@ -44,8 +44,8 @@ public class NewsViewModel extends AndroidViewModel {
     private void getFromLocal() {
         MercadoLivreLocalRepository localRepository = new MercadoLivreLocalRepository();
 
-        disposable.add(localRepository.getLocalNews(getApplication().getApplicationContext())
-                .subscribeOn(Schedulers.io())
+        disposable.add(localRepository.getLocalResults(getApplication().getApplicationContext())
+                .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(results -> {
                     resultLiveData.setValue(results);
@@ -61,22 +61,22 @@ public class NewsViewModel extends AndroidViewModel {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(newsResponse -> {
+
+                    new Thread(() -> {
+                        DatabaseRoom room = DatabaseRoom.getDatabase(getApplication());
+                        ResultsDao resultsDao = room.resultsDAO();
+                        resultsDao.insert(newsResponse.getResults());
+                    }).start();
+
                     resultLiveData.setValue(newsResponse.getResults());
                 }, throwable -> {
                     Log.i("LOG", "Error: " + throwable.getMessage());
                 }));
     }
 
-    private boolean isNetworkConnected(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo;
-
-        if (connectivityManager != null) {
-            networkInfo = connectivityManager.getActiveNetworkInfo();
-            return networkInfo != null && networkInfo.isConnected() &&
-                    (networkInfo.getType() == ConnectivityManager.TYPE_WIFI
-                            || networkInfo.getType() == ConnectivityManager.TYPE_MOBILE);
-        }
-        return false;
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        disposable.clear();
     }
 }

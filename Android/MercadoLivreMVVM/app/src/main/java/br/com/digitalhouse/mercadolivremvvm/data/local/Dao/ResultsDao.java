@@ -10,7 +10,7 @@ import android.arch.persistence.room.Update;
 import java.util.List;
 
 import br.com.digitalhouse.mercadolivremvvm.model.Result;
-import io.reactivex.Observable;
+import io.reactivex.Flowable;
 
 @Dao
 public interface ResultsDao {
@@ -28,5 +28,5 @@ public interface ResultsDao {
     void delete(Result result);
 
     @Query("Select * from result limit 30")
-    List<Result> getAll();
+    Flowable<List<Result>> getAll(); // Aqui retornamos um Flowable que é o observavel para o ROOM DATABASE
 }

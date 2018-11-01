@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 
 public class AppUtil {
 
+    // Verifica se temos conexão com internet
     public static boolean isNetworkConnected(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo;

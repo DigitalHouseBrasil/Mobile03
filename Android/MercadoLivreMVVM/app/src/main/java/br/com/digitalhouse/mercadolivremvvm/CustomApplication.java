@@ -9,6 +9,7 @@ public class CustomApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // Se estamos em modo Debug habilitamos o Stetho para conseguirmos ver nossas requisições no google chrome
         if (BuildConfig.DEBUG) {
             Stetho.initializeWithDefaults(this);
         }

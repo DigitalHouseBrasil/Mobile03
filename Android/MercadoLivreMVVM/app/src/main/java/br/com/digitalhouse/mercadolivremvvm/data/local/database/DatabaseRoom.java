@@ -10,9 +10,10 @@ import br.com.digitalhouse.mercadolivremvvm.data.local.Dao.ResultsDao;
 import br.com.digitalhouse.mercadolivremvvm.model.Result;
 
 @Database(entities = {Result.class}, version = 1, exportSchema = false)
-@TypeConverters(Converters.class)
+@TypeConverters(Converters.class) // Adicionamos os conversores
 public abstract class DatabaseRoom extends RoomDatabase {
 
+    // Criamos o DAO que será retornado
     public abstract ResultsDao resultsDAO();
 
     private static volatile DatabaseRoom INSTANCE;

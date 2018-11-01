@@ -10,9 +10,8 @@ import android.util.Log;
 import java.util.List;
 
 import br.com.digitalhouse.mercadolivremvvm.data.local.MercadoLivreLocalRepository;
-import br.com.digitalhouse.mercadolivremvvm.data.local.database.DatabaseRoom;
 import br.com.digitalhouse.mercadolivremvvm.data.network.MercadoLivreRemoteRepository;
-import br.com.digitalhouse.mercadolivremvvm.data.local.Dao.ResultsDao;
+import br.com.digitalhouse.mercadolivremvvm.model.MercadoLivreResponse;
 import br.com.digitalhouse.mercadolivremvvm.model.Result;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -33,6 +32,7 @@ public class MercadoLivreViewModel extends AndroidViewModel {
         return resultLiveData;
     }
 
+    // Ao buscar o item verificamos se estamos conectados ou não
     public void searchItem(String item) {
         if (isNetworkConnected(getApplication())) {
             getFromNetwork(item);
@@ -44,10 +44,12 @@ public class MercadoLivreViewModel extends AndroidViewModel {
     private void getFromLocal() {
         MercadoLivreLocalRepository localRepository = new MercadoLivreLocalRepository();
 
+        // Adicionamos a chamada a um disposible para podermos eliminar o disposable da destruição do viewmodel
         disposable.add(localRepository.getLocalResults(getApplication().getApplicationContext())
-                .subscribeOn(Schedulers.computation())
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(results -> {
+                    // Chegou aqui então alteramos o live data, assim a View que está observando ele pode atualizar a tela
                     resultLiveData.setValue(results);
                 }, throwable -> {
                     Log.i("LOG", "Error: " + throwable.getMessage());
@@ -57,23 +59,33 @@ public class MercadoLivreViewModel extends AndroidViewModel {
     private void getFromNetwork(String item) {
         MercadoLivreRemoteRepository remoteRepository = new MercadoLivreRemoteRepository();
 
+        // Adicionamos a chamada a um disposible para podermos eliminar o disposable da destruição do viewmodel
         disposable.add(remoteRepository.searchItems(item)
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.newThread())
+                .map(this::saveItems) //  Como estamos em background podemos ja salvar os items
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(newsResponse -> {
 
-                    new Thread(() -> {
-                        DatabaseRoom room = DatabaseRoom.getDatabase(getApplication());
-                        ResultsDao resultsDao = room.resultsDAO();
-                        resultsDao.insert(newsResponse.getResults());
-                    }).start();
-
+                    // Chegou aqui então alteramos o live data, assim a View que está observando ele pode atualizar a tela
                     resultLiveData.setValue(newsResponse.getResults());
                 }, throwable -> {
+                    // Se deu erro mostramos o log
                     Log.i("LOG", "Error: " + throwable.getMessage());
                 }));
     }
 
+    public MercadoLivreResponse saveItems(MercadoLivreResponse mercadoLivreResponse) {
+        //Pegamos ums instancia do repositório
+        MercadoLivreLocalRepository localRepository = new MercadoLivreLocalRepository();
+
+        // Salvamos no banco de dados os dados que buscamos na api
+        localRepository.insertItems(getApplication(), mercadoLivreResponse.getResults());
+
+        // Retornamos o que a api nos mandouo para continuarmos como stream do RX
+        return mercadoLivreResponse;
+    }
+
+    // Limpa as chamadas que fizemos no RX
     @Override
     protected void onCleared() {
         super.onCleared();

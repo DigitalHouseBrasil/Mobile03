@@ -1,10 +1,8 @@
-package br.com.digitalhouse.moviemvvm.view;
+package br.com.digitalhouse.moviemvvm.home.view;
 
-import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,7 +15,7 @@ import java.util.List;
 import br.com.digitalhouse.moviemvvm.R;
 import br.com.digitalhouse.moviemvvm.adapters.RecyclerViewMovieAdapter;
 import br.com.digitalhouse.moviemvvm.model.Movie;
-import br.com.digitalhouse.moviemvvm.viewmodel.MovieViewModel;
+import br.com.digitalhouse.moviemvvm.home.viewmodel.MovieViewModel;
 
 public class MainActivity extends AppCompatActivity {
 

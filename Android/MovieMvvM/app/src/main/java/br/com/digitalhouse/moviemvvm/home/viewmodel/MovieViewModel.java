@@ -1,4 +1,4 @@
-package br.com.digitalhouse.moviemvvm.viewmodel;
+package br.com.digitalhouse.moviemvvm.home.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;

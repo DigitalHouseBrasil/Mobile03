@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.digitalhouse.digitalphotos.Image;
+import com.digitalhouse.digitalphotos.model.Image;
 import com.digitalhouse.digitalphotos.R;
 import com.squareup.picasso.Picasso;
 

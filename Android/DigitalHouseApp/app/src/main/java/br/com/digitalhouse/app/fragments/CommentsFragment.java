@@ -1,6 +1,7 @@
 package br.com.digitalhouse.app.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,15 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
+import br.com.digitalhouse.app.LoginActivity;
 import br.com.digitalhouse.app.R;
 import br.com.digitalhouse.app.adapters.SpinnerAdapter;
 import br.com.digitalhouse.app.model.Person;
@@ -66,13 +65,11 @@ public class CommentsFragment extends Fragment {
         Button button = view.findViewById(R.id.button);
 
         final String[] nomes = getResources().getStringArray(R.array.nomes);
-        List<Person> personList = new ArrayList<>();
+        final List<Person> personList = new ArrayList<>();
 
         for (String nome : nomes) {
             personList.add(new Person(nome));
         }
-
-        Collections.sort(personList);
 
         //ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, nomes);
         SpinnerAdapter adapter = new SpinnerAdapter(personList);
@@ -81,7 +78,14 @@ public class CommentsFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), "Item: " + nomes[position], Toast.LENGTH_SHORT).show();
+
+                if (position > 0){
+                    Person person = personList.get(position);
+
+                    Intent intent = new Intent(getContext(), LoginActivity.class);
+                    intent.putExtra("PERSON", person);
+                    startActivity(intent);
+                }
             }
 
             @Override
@@ -94,8 +98,8 @@ public class CommentsFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nome = spinner.getSelectedItem().toString();
-                Toast.makeText(getContext(), "Nome Selecionado: " + nome, Toast.LENGTH_SHORT).show();
+
+
             }
         });
 

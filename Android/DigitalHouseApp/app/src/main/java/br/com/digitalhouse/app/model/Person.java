@@ -1,8 +1,10 @@
 package br.com.digitalhouse.app.model;
 
-import android.support.annotation.NonNull;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Person implements Comparable<Person> {
+public class Person implements Parcelable {
+
     private String name;
     private String profession;
 
@@ -17,6 +19,23 @@ public class Person implements Comparable<Person> {
         this.name = name;
         this.profession = profession;
     }
+
+    protected Person(Parcel in) {
+        name = in.readString();
+        profession = in.readString();
+    }
+
+    public static final Creator<Person> CREATOR = new Creator<Person>() {
+        @Override
+        public Person createFromParcel(Parcel in) {
+            return new Person(in);
+        }
+
+        @Override
+        public Person[] newArray(int size) {
+            return new Person[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -35,7 +54,13 @@ public class Person implements Comparable<Person> {
     }
 
     @Override
-    public int compareTo(@NonNull Person outraPessoa) {
-        return this.getName().compareTo(outraPessoa.getName());
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(profession);
     }
 }

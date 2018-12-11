@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app.fragments;
+package br.com.digitalhouse.app.mob3.fragments;
 
 
 import android.os.Bundle;
@@ -10,10 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import br.com.digitalhouse.app.R;
-import br.com.digitalhouse.app.adapters.RecyclerViewPersonAdapter;
-import br.com.digitalhouse.app.interfaces.RecyclerViewOnItemClickListener;
-import br.com.digitalhouse.app.model.Person;
+import br.com.digitalhouse.app.mob3.R;
+import br.com.digitalhouse.app.mob3.adapters.RecyclerViewPersonAdapter;
+import br.com.digitalhouse.app.mob3.interfaces.RecyclerViewOnItemClickListener;
+import br.com.digitalhouse.app.mob3.model.Person;
 
 import java.util.ArrayList;
 import java.util.List;

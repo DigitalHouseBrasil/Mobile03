@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="@dimen/default_padding"
-        tools:context=".fragments.PostsFragment">
+        tools:context=".mob3.fragments.PostsFragment">
 
     <TextView
             android:id="@+id/textViewPost"

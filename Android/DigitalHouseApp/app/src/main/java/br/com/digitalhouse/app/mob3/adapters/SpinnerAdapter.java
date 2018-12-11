@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app.adapters;
+package br.com.digitalhouse.app.mob3.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.com.digitalhouse.app.R;
-import br.com.digitalhouse.app.model.Person;
+import br.com.digitalhouse.app.mob3.R;
+import br.com.digitalhouse.app.mob3.model.Person;
 
 public class SpinnerAdapter extends BaseAdapter {
 

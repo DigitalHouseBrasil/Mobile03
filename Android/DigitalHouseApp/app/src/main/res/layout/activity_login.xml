@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context=".LoginActivity">
+        tools:context=".mob3.LoginActivity">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageview_logo"

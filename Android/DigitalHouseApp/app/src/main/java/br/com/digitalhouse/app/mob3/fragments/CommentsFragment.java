@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app.fragments;
+package br.com.digitalhouse.app.mob3.fragments;
 
 
 import android.content.Intent;
@@ -15,10 +15,10 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.digitalhouse.app.LoginActivity;
-import br.com.digitalhouse.app.R;
-import br.com.digitalhouse.app.adapters.SpinnerAdapter;
-import br.com.digitalhouse.app.model.Person;
+import br.com.digitalhouse.app.mob3.LoginActivity;
+import br.com.digitalhouse.app.mob3.R;
+import br.com.digitalhouse.app.mob3.adapters.SpinnerAdapter;
+import br.com.digitalhouse.app.mob3.model.Person;
 
 /**
  * A simple {@link Fragment} subclass.

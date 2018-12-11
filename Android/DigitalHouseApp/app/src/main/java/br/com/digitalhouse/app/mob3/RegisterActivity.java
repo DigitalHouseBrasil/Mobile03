@@ -1,7 +1,9 @@
-package br.com.digitalhouse.app;
+package br.com.digitalhouse.app.mob3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import br.com.digitalhouse.app.mob3.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

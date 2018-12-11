@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.digitalhouse.app">
+    package="br.com.digitalhouse.app.mob3">
 
     <application
         android:allowBackup="true"
@@ -33,16 +33,6 @@
         <activity
             android:name=".RegisterActivity"
             android:label="Register now" />
-
-        <!-- Activities de teste -->
-        <activity android:name="br.com.digitalhouse.tarefas.CalculatorActivity" />
-        <activity android:name="br.com.digitalhouse.tarefas.TestActivity">
-            <!-- <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
-
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>-->
-        </activity>
     </application>
 
 </manifest>

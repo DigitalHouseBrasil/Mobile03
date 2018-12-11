@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app.fragments;
+package br.com.digitalhouse.app.mob3.fragments;
 
 
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.Button;
-import br.com.digitalhouse.app.R;
-import br.com.digitalhouse.app.interfaces.ClickFragment;
+import br.com.digitalhouse.app.mob3.R;
+import br.com.digitalhouse.app.mob3.interfaces.ClickFragment;
 
 /**
  * A simple {@link Fragment} subclass.

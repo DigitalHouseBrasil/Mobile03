@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app;
+package br.com.digitalhouse.app.mob3;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import br.com.digitalhouse.app.model.Person;
+import br.com.digitalhouse.app.mob3.R;
 
 public class LoginActivity extends AppCompatActivity {
 

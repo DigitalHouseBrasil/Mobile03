@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app.model;
+package br.com.digitalhouse.app.mob3.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app.adapters;
+package br.com.digitalhouse.app.mob3.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.com.digitalhouse.app.R;
-import br.com.digitalhouse.app.interfaces.RecyclerViewOnItemClickListener;
-import br.com.digitalhouse.app.model.Person;
+import br.com.digitalhouse.app.mob3.R;
+import br.com.digitalhouse.app.mob3.interfaces.RecyclerViewOnItemClickListener;
+import br.com.digitalhouse.app.mob3.model.Person;
 
 public class RecyclerViewPersonAdapter extends RecyclerView.Adapter<RecyclerViewPersonAdapter.ViewHolder> {
 

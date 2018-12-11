@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app;
+package br.com.digitalhouse.app.mob3;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import br.com.digitalhouse.app.mob3.R;
 
 public class SplashActivity extends AppCompatActivity {
 

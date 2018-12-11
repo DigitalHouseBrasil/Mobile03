@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app;
+package br.com.digitalhouse.app.mob3;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,10 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import br.com.digitalhouse.app.fragments.CommentsFragment;
-import br.com.digitalhouse.app.fragments.PeopleFragment;
-import br.com.digitalhouse.app.fragments.PostsFragment;
-import br.com.digitalhouse.app.interfaces.ClickFragment;
+import br.com.digitalhouse.app.mob3.R;
+import br.com.digitalhouse.app.mob3.fragments.CommentsFragment;
+import br.com.digitalhouse.app.mob3.fragments.PeopleFragment;
+import br.com.digitalhouse.app.mob3.fragments.PostsFragment;
+import br.com.digitalhouse.app.mob3.interfaces.ClickFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,ClickFragment {

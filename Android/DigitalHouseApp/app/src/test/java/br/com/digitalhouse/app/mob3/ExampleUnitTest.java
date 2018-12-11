@@ -1,4 +1,4 @@
-package br.com.digitalhouse.app;
+package br.com.digitalhouse.app.mob3;
 
 import org.junit.Test;
 
